@@ -45,10 +45,10 @@
             Everything that I want, I want from you
             But I just can\'t have you
             Everything that I need, I need from you
-            But I just, just can\'t have you'
+            But I just, just can\'t have you';
         ?>
         <!-- Print della variabile contenente il testo della canzone in un <p> -->
-        <p> <?php echo $stray_heart_lyrics ?> </p>
+        <p> <?php echo $stray_heart_lyrics; ?> </p>
 
     </div>
 
