@@ -50,6 +50,14 @@
         <!-- Print della variabile contenente il testo della canzone in un <p> -->
         <p> <?php echo $stray_heart_lyrics; ?> </p>
 
+
+        <!-- Link alla pagina discografia completa Green Day -->
+        <a href="./discografia.php?title=Discografia">
+            <button>
+                Vai alla discografia!
+            </button>
+        </a>
+
     </div>
 
 </body>
