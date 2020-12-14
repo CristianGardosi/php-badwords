@@ -14,6 +14,7 @@
 
         <h1>Stray heart</h1>
         <h2>Green Day</h2>
+
         <!-- Variabile testo canzone -->
         <?php
             $stray_heart_lyrics = 'I lost my way, oh baby, this stray heart
@@ -47,14 +48,31 @@
             Everything that I need, I need from you
             But I just, just can\'t have you';
         ?>
-        <!-- Print della variabile contenente il testo della canzone in un <p> -->
-        <p> <?php echo $stray_heart_lyrics; ?> </p>
+        
+        <!-- Print lyric base senza censura utilizzando ECHO -->
+        <p>
+        <?php echo $stray_heart_lyrics ?>
+        </p>
 
+         <!-- S T R L E N, conteggio numero di caratteri lyric -->
+         <?php $lyric_length = strlen($stray_heart_lyrics); ?>
+
+        <small>
+            <?php echo 'Curiosità! Il testo della canzone contiene: ' . $lyric_length . ' caratteri.'; ?>
+        </small>
+
+        <!-- Censura testo mediande utilizzo query string. Utilizzo la parola badword come key della QS e il valore ad essa associato di volta in volta sarà la parola che si trasformerà in maniera dinamica in *** -->
+        <?php 
+            $badword = $_GET["badword"];
+            $lyric_with_badwords_hidden = str_replace($badword, '***', $stray_heart_lyrics);
+        ?>
+        <!-- Print testo censurato -->
+        <p> <?php echo $lyric_with_badwords_hidden ?> </p>
 
         <!-- Link alla pagina discografia completa Green Day -->
         <a href="./discografia.php?title=Discografia">
             <button>
-                Vai alla discografia!
+                Vai alla discografia completa della band!
             </button>
         </a>
 

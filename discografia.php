@@ -9,11 +9,12 @@
 </head>
 
 <body>
+
     <!-- Key query string -->
     <?php
         $title = $_GET['title'];
     ?>
-    <!-- Value query string printato come titolo di pagina dinamicamente -->
+    <!-- Value della query string printato come titolo di pagina -->
     <h1> <?php echo $title; ?> </h1>
 
     <ul>
