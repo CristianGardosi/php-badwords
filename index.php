@@ -50,9 +50,7 @@
         ?>
         
         <!-- Print lyric base senza censura utilizzando ECHO -->
-        <p>
-        <?php echo $stray_heart_lyrics ?>
-        </p>
+        <p> <?php echo $stray_heart_lyrics ?> </p>
 
          <!-- S T R L E N, conteggio numero di caratteri lyric -->
          <?php $lyric_length = strlen($stray_heart_lyrics); ?>
@@ -63,14 +61,11 @@
 
         <!-- Censura testo mediande utilizzo query string. Utilizzo la parola badword come key della QS e il valore ad essa associato di volta in volta sarà la parola che si trasformerà in maniera dinamica in *** -->
         <?php $badword = $_GET["badword"];?>
-        
-        <a href="?badword=you">Clicca per mostrare il testo con la censura</a>
-
-        <h3>Testo censurato (NOT YOU)</h3>
-
+        <!-- Al click sul link aggionerà la barra di ricerca applicando la QS indicata (key + valore) -->
+        <a href="?badword=you">Clicca per censurare il testo sottostante (YOU)</a>
+        <!-- La badword di default è YOU, ma modificando il valore verrano dinamicamente censurate anche le altre parole -->
         <p><?php echo str_replace($badword, '***', $stray_heart_lyrics) ?></p>
         
-
         <!-- Link alla pagina discografia completa Green Day -->
         <a href="./discografia.php?title=Discografia">
             <button>
