@@ -62,12 +62,14 @@
         </small>
 
         <!-- Censura testo mediande utilizzo query string. Utilizzo la parola badword come key della QS e il valore ad essa associato di volta in volta sarà la parola che si trasformerà in maniera dinamica in *** -->
-        <?php 
-            $badword = $_GET["badword"];
-            $lyric_with_badwords_hidden = str_replace($badword, '***', $stray_heart_lyrics);
-        ?>
-        <!-- Print testo censurato -->
-        <p> <?php echo $lyric_with_badwords_hidden ?> </p>
+        <?php $badword = $_GET["badword"];?>
+        
+        <a href="?badword=you">Clicca per mostrare il testo con la censura</a>
+
+        <h3>Testo censurato (NOT YOU)</h3>
+
+        <p><?php echo str_replace($badword, '***', $stray_heart_lyrics) ?></p>
+        
 
         <!-- Link alla pagina discografia completa Green Day -->
         <a href="./discografia.php?title=Discografia">
